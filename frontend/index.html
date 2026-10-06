@@ -4,64 +4,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Performace Analyzer</title>
+    <title>Student Marks Analyzer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
-    <!-- navbar starts-->
-    <nav>
-        <h1>Student Performance Analyzer</h1>
-    </nav>
-    <!-- navbar ends-->
 
-    <div class="input">
-        <!-- input field start -->
-     <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">NAME</span>
-  <input type="text" class="form-control" placeholder="Full Name" aria-label="Username" aria-describedby="basic-addon1">
-</div>
+    <div class="container">
 
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="" aria-label="Recipient’s username" aria-describedby="basic-addon2">
-  <span class="input-group-text" id="basic-addon2">@example.com</span>
-</div>
+        <header>
+            <h1>📊 Student Marks Analyzer</h1>
+            <p>Enter student details and marks to analyze performance</p>
+        </header>
 
-<div class="mb-3">
-  <label for="basic-url" class="form-label">Your vanity URL</label>
-  <div class="input-group">
-    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
-  </div>
-  <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div>
-</div>
+        <div class="main-content">
 
-<div class="input-group mb-3">
-  <span class="input-group-text">$</span>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <span class="input-group-text">.00</span>
-</div>
+            <!-- INPUT SECTION -->
+            <section class="card">
+                <h2>Student Details</h2>
+                <form action=""></form>
+                <div class="student-info">
 
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-  <span class="input-group-text">@</span>
-  <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-</div>
+                    <div class="input-group">
 
-<div class="input-group">
-  <span class="input-group-text">With textarea</span>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
-</div>
+                        <label>Student Name</label>
+                        <input type="text" id="studentName" placeholder="Enter student name">
 
-<!-- input field ends -->
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Roll Number</label>
+                        <input type="text" id="rollNumber" placeholder="Enter roll number">
+                    </div>
+
+                </div>
+                </form>
+
+                <!-- Subject details -->
+<form action="">
+                <h2 class="marks-heading">Enter Marks</h2>
+
+                <div class="marks-grid">
+
+                    <div class="input-group">
+                        <label>Hindi</label>
+                        <input type="number" class="marks" id="hindi" min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label>English</label>
+                        <input type="number" class="marks" id="english" min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Science</label>
+                        <input type="number" class="marks" id="science" min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Social Science</label>
+                        <input type="number" class="marks" id="social" min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Computer</label>
+                        <input type="number" class="marks" id="computer" min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Maths</label>
+                        <input type="number" class="marks" id="maths" min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                </div>
+                </form>
+     <form action="">
+                <div class="buttons">
+                    <button class="analyze-btn" >
+                        Analyze Result
+                    </button>
+                    </form>
+
+                    <button class="reset-btn">
+                        Reset
+                    </button>
+                </div>
+
+                <p id="error"></p>
+
+            </section>
+
+
+            <!-- RESULT SECTION -->
+            <section class="card result-card">
+
+                <h2>Result Summary</h2>
+
+                <div class="student-result">
+                    <h3 id="resultName">Student Name</h3>
+                    <p>Roll No: <span id="resultRoll">---</span></p>
+                </div>
+
+                <div class="summary">
+
+                    <div class="summary-box">
+                        <span>Total</span>
+                        <strong id="total">0 / 500</strong>
+                    </div>
+
+                    <div class="summary-box">
+                        <span>Percentage</span>
+                        <strong id="percentage">0%</strong>
+                    </div>
+
+                    <div class="summary-box">
+                        <span>Grade</span>
+                        <strong id="grade">-</strong>
+                    </div>
+
+                    <div class="summary-box">
+                        <span>Status</span>
+                        <strong id="status">-</strong>
+                    </div>
+
+                </div>
+
+
+                <h3 class="performance-title">Subject Performance</h3>
+
+                <div id="performance">
+
+                    <div class="subject">
+                        <div>
+                            <span>Hindi</span>
+                            <span>--</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div>
+                            <span>English</span>
+                            <span>--</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div>
+                            <span>Science</span>
+                            <span>--</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div>
+                            <span>Social Science</span>
+                            <span>--</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div>
+                            <span>Computer</span>
+                            <span>--</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="subject">
+                        <div>
+                            <span>Maths</span>
+                            <span>--</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="message" id="message">
+                    Enter marks to see the result.
+                </div>
+
+            </section>
+
+        </div>
+       
+        <footer>
+            <h4>Designed By :</h4>
+         <i class="fa-brands fa-github"><a href="https://github.com/Anant-kesh">Frontend </a></i> <br>
+            <i class="fa-brands fa-github"><a href="https://github.com/ItzmeJan">Backend</a></i> <br>
+             <i class="fa-brands fa-github"><a href="https://github.com/Nimesh1205">Ai/Ml</a></i> <br>
+            <i class="fa-brands fa-github"><a href="https://github.com/AditiBind007">Database</a></i> <br>
+            
+         
+        </footer>
+
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+
     <script src="script.js"></script>
+
 </body>
 
 </html>
